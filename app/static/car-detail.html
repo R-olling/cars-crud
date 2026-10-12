@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car | My garage</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-page="detail">
+  <header class="site-header">
+    <a class="brand" href="/">My garage<span class="badge">LOCAL</span></a>
+    <nav aria-label="Main navigation"><a href="/">Cars</a><a href="/docs">API docs</a></nav>
+  </header>
+  <main class="narrow">
+    <a class="back-link" href="/">Back to cars</a>
+    <section class="page-heading"><div><p class="eyebrow">CAR DETAILS</p><h1 id="car-title">Loading...</h1><p>A closer look at your car.</p></div></section>
+    <p id="error" class="error" role="alert" hidden></p>
+    <noscript><p class="error">Enable JavaScript to view this car.</p></noscript>
+    <section id="car-detail" class="panel form-panel" hidden>
+      <dl class="details-grid">
+        <div><dt>Make</dt><dd id="car-make"></dd></div>
+        <div><dt>Model</dt><dd id="car-model"></dd></div>
+        <div><dt>Year</dt><dd id="car-year"></dd></div>
+        <div><dt>Color</dt><dd id="car-color"></dd></div>
+      </dl>
+      <div class="form-actions"><a id="edit-link" class="button" href="/">Edit car</a><button id="delete-button" class="danger" type="button">Delete car</button></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car details | My garage</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-page="form">
+  <header class="site-header">
+    <a class="brand" href="/">My garage<span class="badge">LOCAL</span></a>
+    <nav aria-label="Main navigation"><a href="/">Cars</a><a href="/docs">API docs</a></nav>
+  </header>
+  <main class="narrow">
+    <a class="back-link" href="/">Back to cars</a>
+    <section class="page-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="page-title">Add car</h1><p>Just the essentials. You can edit these later.</p></div></section>
+    <p id="error" class="error" role="alert" tabindex="-1" hidden></p>
+    <noscript><p class="error">Enable JavaScript to create or update a car.</p></noscript>
+    <form id="car-form" class="panel form-panel">
+      <div class="form-grid">
+        <div class="field"><label for="make">Make</label><input id="make" name="make" type="text" placeholder="Toyota" required maxlength="60" autocomplete="off"></div>
+        <div class="field"><label for="model">Model</label><input id="model" name="model" type="text" placeholder="Corolla" required maxlength="60" autocomplete="off"></div>
+        <div class="field"><label for="year">Year</label><input id="year" name="year" type="number" placeholder="2024" required min="1886" max="2100" step="1" aria-describedby="year-help"><small id="year-help">Between 1886 and 2100.</small></div>
+        <div class="field"><label for="color">Color <span class="optional">(optional)</span></label><input id="color" name="color" type="text" placeholder="Silver" maxlength="40" autocomplete="off"></div>
+      </div>
+      <div class="form-actions"><button id="save-button" type="submit" disabled>Create car</button><a id="cancel-link" class="button secondary" href="/">Cancel</a></div>
+    </form>
+  </main>
+</body>
+</html>

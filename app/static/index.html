@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cars | My garage</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-page="list">
+  <header class="site-header">
+    <a class="brand" href="/">My garage<span class="badge">LOCAL</span></a>
+    <nav aria-label="Main navigation"><a href="/" aria-current="page">Cars</a><a href="/docs">API docs</a></nav>
+  </header>
+  <main>
+    <section class="page-heading">
+      <div><p class="eyebrow">YOUR COLLECTION</p><h1>Cars</h1><p>Add a car, update its details, or make room for something new.</p></div>
+      <a class="button" href="/cars/new">Add car</a>
+    </section>
+    <p id="error" class="error" role="alert" hidden></p>
+    <noscript><p class="error">Enable JavaScript to load and manage your cars.</p></noscript>
+    <section class="panel" aria-label="Car collection">
+      <div class="panel-heading"><h2>All cars</h2><span id="car-count" class="count" role="status">Loading...</span></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h2>No cars yet</h2><p>Your collection starts with one car.</p>
+        <a class="button secondary" href="/cars/new">Add your first car</a>
+      </div>
+      <div id="table-wrapper" class="table-wrapper" hidden>
+        <table>
+          <caption class="sr-only">Saved cars, newest first</caption>
+          <thead><tr><th scope="col">Make</th><th scope="col">Model</th><th scope="col">Year</th><th scope="col">Color</th><th scope="col">Actions</th></tr></thead>
+          <tbody id="cars"></tbody>
+        </table>
+      </div>
+    </section>
+    <p class="footnote">Stored locally in SQLite. No account needed.</p>
+  </main>
+</body>
+</html>
