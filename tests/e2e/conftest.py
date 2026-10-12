@@ -53,7 +53,7 @@ def browser(pytestconfig):
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as playwright:
-        options = {"headless": not pytestconfig.getoption("--headed")}
+        options = {"headless": not pytestconfig.getoption("--headed", default=False, skip=True)}
         executable = os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH")
         if executable:
             options["executable_path"] = executable
