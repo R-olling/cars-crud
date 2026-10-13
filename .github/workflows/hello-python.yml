@@ -1,0 +1,25 @@
+name: Hello Python
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download the repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Show Python version
+        run: python --version
+      - name: Print a message
+        run: python -c "print('Hello from GitHub Actions!')"
