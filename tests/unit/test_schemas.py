@@ -20,6 +20,7 @@ def test_color_is_optional():
     assert car.color == ""
 
 
+
 @pytest.mark.parametrize("year", [1886, 2100])
 def test_year_boundaries_are_allowed(year):
     assert CarInput(make="Toyota", model="Corolla", year=year).year == year
